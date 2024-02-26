@@ -78,7 +78,7 @@ const ContactPage = () => {
           <span  className="text-black">Dear Aklilu Tamirat,</span>
           <input
             rows={6}
-            className="bg-transparent border-b-2 text-black border-b-black outline-none resize-none"
+            className="bg-transparent border-b-2 text-black border-b-black outline-none resize-none text-black"
             name="user_message" 
             type='text'
             value={message}

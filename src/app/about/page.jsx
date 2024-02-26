@@ -31,21 +31,21 @@ const AboutPage = () => {
           <div className="flex flex-col gap-12 justify-center">
             {/* BIOGRAPHY IMAGE */}
             <Image
-              src="/my 1image.png"
+              src="/myImage.png"
               alt=""
               width={112}
               height={132}
               className="w-28 h-28 rounded-full object-cover"
             />
             {/* BIOGRAPHY TITLE */}
-            <h1 className="font-bold text-2xl">BIOGRAPHY</h1>
+            <h1 className="font-bold text-2xl text-black">BIOGRAPHY</h1>
             {/* BIOGRAPHY DESC */}
-            <p className="text-lg">
+            <p className="text-lg  text-black">
             I am Aklilu Tamirat, a software developer passionate about tackling real-world challenges that hold significant importance.
              I find immense joy and fulfillment in crafting solutions to complex problems within the realm of software development
             </p>
             {/* BIOGRAPHY QUOTE */}
-            <span className="italic">
+            <span className="italic text-black">
             Persistently crafting code, I am an unwavering force, tirelessly pursuing dreams.
              Trusting that each line written is a step closer to transforming lives through innovative software. 
             </span>
@@ -100,7 +100,7 @@ const AboutPage = () => {
               initial={{ x: "-300px" }}
               animate={isSkillRefInView ? { x: 0 } : {}}
               transition={{ delay: 0.2 }}
-              className="font-bold text-2xl"
+              className="font-bold text-2xl text-black"
             >
               SKILLS  and TOOLS
             </motion.h1>
@@ -112,7 +112,7 @@ const AboutPage = () => {
           >
               {/* <div id='works' className="w-full  rounded-lg shadow  "> */}
          <div id='programming '>
-           <h3 className='text-2xl mx-20 font-bold my-9'>Programming Languages</h3>
+           <h3 className='text-2xl mx-20 font-bold my-9 text-black'>Programming Languages</h3>
           <div className='flex flex-row  flex-wrap w-1/2 mx-20 gap-2  cursor-pointer'>
                <button type="button"  className="w-1/4 p-4  pointer-events-none inline-block rounded bg-slate-500 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-black  transition duration-150 ease-in-out hover:bg-primary-accent-100 focus:bg-primary-accent-100 focus:outline-none focus:ring-0 active:bg-primary-accent-200 " disabled>
                           Python</button>
@@ -131,7 +131,7 @@ const AboutPage = () => {
           </div>
          </div>
         <div id='technologies'>
-           <h3 className='text-2xl mx-20 p-6 font-bold  '>Technologies</h3>
+           <h3 className='text-2xl mx-20 p-6 font-bold  text-black'>Technologies</h3>
            <div className='flex flex-row flex-wrap w-1/2 mx-20 gap-3   cursor-pointer'>
             <button type="button"  className="w-1/4 p-4  pointer-events-none inline-block rounded bg-slate-500 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-black  transition duration-150 ease-in-out hover:bg-primary-accent-100 focus:bg-primary-accent-100 focus:outline-none focus:ring-0 active:bg-primary-accent-200 " disabled>
                             Nextjs</button>
@@ -152,7 +152,7 @@ const AboutPage = () => {
            </div>
         </div>
         <div id='serverless'>
-             <h3 className='text-2xl mx-20 p-6 font-bold   '>Serverless</h3>
+             <h3 className='text-2xl mx-20 p-6 font-bold  text-black '>Serverless</h3>
              <div className='flex flex-row  flex-wrap w-1/2 mx-20 gap-2  cursor-pointer'>
                <button type="button"  className="w-1/4 p-4  pointer-events-none inline-block rounded bg-slate-500 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-black  transition duration-150 ease-in-out hover:bg-primary-accent-100 focus:bg-primary-accent-100 focus:outline-none focus:ring-0 active:bg-primary-accent-200 " disabled>
                             AuthO</button>
@@ -167,7 +167,7 @@ const AboutPage = () => {
              </div>
         </div>
         <div>
-           <h3 className='text-2xl mx-20 p-6 font-bold' >Database and Deployment</h3>
+           <h3 className='text-2xl mx-20 p-6 font-bold  text-black' >Database and Deployment</h3>
           <div className='flex flex-row flex-wrap w-1/2 mx-20 gap-3 cursor-pointer '>
             <button type="button"  className="w-1/3 p-4  pointer-events-none inline-block rounded bg-slate-500 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-black  transition duration-150 ease-in-out hover:bg-primary-accent-100 focus:bg-primary-accent-100 focus:outline-none focus:ring-0 active:bg-primary-accent-200 " disabled>
                           Postgresql </button>
@@ -180,7 +180,7 @@ const AboutPage = () => {
           </div>
         </div>
         <div>
-           <h3 className='text-2xl mx-20 p-6 font-bold '>Softwares and Tools</h3>
+           <h3 className='text-2xl mx-20 p-6 font-bold text-black'>Softwares and Tools</h3>
           <div className='flex flex-row flex-wrap w-1/2 mx-20 gap-3  cursor-pointer'>
                  <button type="button"  className="w-1/3 p-4  pointer-events-none inline-block rounded bg-slate-500 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-black  transition duration-150 ease-in-out hover:bg-primary-accent-100 focus:bg-primary-accent-100 focus:outline-none focus:ring-0 active:bg-primary-accent-200 " disabled>
                 Vscode </button>

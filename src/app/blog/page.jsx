@@ -1,8 +1,8 @@
 'use client'
 
-import { Project } from '@/lib/project';
+
 import { motion } from 'framer-motion';
-import projects from '@/lib/getStatic';
+
 import Link from 'next/link';
 import Image from 'next/image';
 

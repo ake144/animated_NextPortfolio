@@ -94,7 +94,7 @@ const Navbar = () => {
         <Link href="github.com/ake144">
           <Image src="/github.png" alt="" width={24} height={24} />
         </Link>
-        <Link href="/">
+        <Link href="https://dribbble.com/ake">
           <Image src="/dribbble.png" alt="" width={24} height={24} />
         </Link>
         <Link href="/">
