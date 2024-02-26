@@ -248,7 +248,7 @@ const AboutPage = () => {
                     ML Internship
                   </div>
                   {/* JOB DESC */}
-                  <div className="p-3 text-sm italic">
+                  <div className="p-3 text-sm italic text-black">
                     Internship at prodigy InfoTech in Machine Learning. I have gained a deep understanding in deep learning, neural networks and vast areas of AI.{" "}
                   </div>
                   {/* JOB DATE */}
@@ -290,7 +290,7 @@ const AboutPage = () => {
                     Junior React Developer
                   </div>
                   {/* JOB DESC */}
-                  <div className="p-3 text-sm italic">
+                  <div className="p-3 text-sm italic text-black">
                     I spearheaded React-based application development,
                     leveraging advanced skills.{" "}
                   </div>
@@ -313,7 +313,7 @@ const AboutPage = () => {
                     Freelancer{" "}
                   </div>
                   {/* JOB DESC */}
-                  <div className="p-3 text-sm italic">
+                  <div className="p-3 text-sm italic  text-black">
                     I provided web solutions, applying a range of technologies
                     to address client requirements.{" "}
                   </div>
