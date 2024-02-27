@@ -26,26 +26,26 @@ export async function GET() {
   return NextResponse.json(postsWithStringBigInts);
 }
 
-export async function POST(request) {
-  const body = await request.json();
-  const { title, desc, color, link, img } = body;
+// export async function POST(request) {
+//   const body = await request.json();
+//   const { title, desc, color, link, img } = body;
 
-  const newPost = await prisma.portfolio.create({
-    data: {
-      title,
-      desc,
-      color,
-      link,
-      img,
-    },
-  });
+//   const newPost = await prisma.portfolio.create({
+//     data: {
+//       title,
+//       desc,
+//       color,
+//       link,
+//       img,
+//     },
+//   });
 
-  // Convert BigInt values to strings before sending the JSON response
-  const newPostWithStringBigInts = convertBigIntsToStrings(newPost);
+//   // Convert BigInt values to strings before sending the JSON response
+//   const newPostWithStringBigInts = convertBigIntsToStrings(newPost);
 
-  return NextResponse.json({
-    success: 1,
-    message: 'create success',
-    post: newPostWithStringBigInts,
-  });
-}
+//   return NextResponse.json({
+//     success: 1,
+//     message: 'create success',
+//     post: newPostWithStringBigInts,
+//   });
+// }

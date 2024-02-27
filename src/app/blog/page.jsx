@@ -1,31 +1,34 @@
 'use client';
 import { motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useState,useEffect } from 'react';
+
+async function getAllPortfolios() {
+  const response = await fetch('/api/blog', 
+  { cache: 'force-cache' });
+
+  if (!response.ok) {
+    throw new Error('Failed to fetch posts');
+  }
+
+  return response.json();
+}
 
 const Blog = () => {
-  const [posts, setPosts] = useState([]);
+  const [posts, setPosts] = useState(null);
 
   useEffect(() => {
-    // Function to fetch posts from your API
-    const fetchPosts = async () => {
+    const fetchData = async () => {
       try {
-        const response = await fetch('/api/blog'); // Update the path based on your API route
-        if (!response.ok) {
-          throw new Error('Failed to fetch posts');
-        }
-
-        const data = await response.json();
+        const data = await getAllPortfolios();
         setPosts(data);
-        console.log(data);
       } catch (error) {
         console.error('Error fetching posts:', error.message);
       }
     };
 
-    // Call the fetchPosts function
-    fetchPosts();
+    fetchData();
   }, []);
 
   return (
@@ -38,7 +41,7 @@ const Blog = () => {
       <div className='flex row-span gap-8 w-1/2 flex-auto '>
         {posts?.map((item) => (
           <div
-            className={` p-2 flex flex-col w-full h-full  bg-gradient-to-r ${item.color}`}
+            className={` p-2 flex flex-col w-full h-full  bg-gradient-to-r ${item?.color}`}
             key={item.id}
           >
             <div className="flex flex-col gap-3 text-white">
@@ -46,14 +49,14 @@ const Blog = () => {
                 {item?.title}
               </h1>
               <div className="relative w-30 h-26 md:w-66 md:h464 lg:w-[200px] lg:h-90px] xl:w-[200px] xl:h-[120px]">
-                <Image src={item?.img} alt="png " fill />
+                <Image src={item?.img} alt="png " height={200}  width={100}/>
               </div>
               <p className="w-50 md:w-76 lg:w-[200px] lg:text-md xl:w-[300px] text-black">
                 {item?.desc}
               </p>
               <Link href={item?.link} passHref>
                 <button className="p-5 text-sm md:p-4 md:text-md lg:p-4 lg:text-md bg-white text-gray-600 font-semibold m-4 rounded">
-                  See Demo
+                  Read More
                 </button>
               </Link>
             </div>

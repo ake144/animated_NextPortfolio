@@ -1,33 +1,35 @@
+// BlogDetails.jsx
 'use client';
+
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
-import { useRouter } from 'next/router'; 
-import Link from 'next/link';
 import Image from 'next/image';
 
-const BlogDetails = ({ id }) => {
-  const [post, setPost] = useState(null); 
-  const api = `/api/blog/${id}`; 
+async function getPost(id) {
+  const response = await fetch(`/api/blog/${id}`);
+
+  if (!response.ok) {
+    throw new Error(`Failed to fetch blog post with ID ${id}`);
+  }
+  return response.json();
+}
+
+const BlogDetails = ({ params }) => {
+  const { id } = params;
+  const [post, setPost] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(api);
-        const data = await response.json();
-
-        if (response.ok) {
-          setPost(data);
-          console.log(data);
-        } else {
-          console.error(`Failed to fetch blog post with ID ${id}`);
-        }
+        const postData = await getPost(id);
+        setPost(postData);
       } catch (error) {
-        console.error('Error fetching blog post:', error);
+      //   console.error('Error fetching blog post:', error.message);
       }
     };
 
     fetchData();
-  }, [id, api]);
+  }, [id]);
 
   return (
     <motion.div
@@ -38,14 +40,16 @@ const BlogDetails = ({ id }) => {
     >
       {post ? (
         <>
-          <Image
-            src={post.image} // Assuming 'image' is a property in your API response
-            alt={post.title} // Assuming 'title' is a property in your API response
-            width={800}
-            height={500}
-          />
-          <h2>{post.title}</h2>
-          <p>{post.desc}</p>
+          <div className='flex flex-col justify-center items-center gap-8 w-1/2 flex-auto '>
+            <h2>{post.title}</h2>
+            <Image
+              src={post?.img}
+              alt={post?.title}
+              height={100}
+              width={100}
+            />
+            <p className='p-2 justify-center font-sans text-sm'>{post.desc}</p>
+          </div>
         </>
       ) : (
         <p>Loading...</p>

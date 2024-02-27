@@ -1,12 +1,10 @@
-import { NextRequest, NextResponse } from 'next/server';
-import prisma from '../../../../lib/prisma';
 
 function convertBigIntsToStrings(data) {
   // Recursively convert BigInt values to strings
   const convert = (value) => {
     if (typeof value === 'bigint') {
       return value.toString();
-    } else if (typeof value === 'object') {
+    } else if (typeof value === 'object' && value !== null) {
       for (const key in value) {
         value[key] = convert(value[key]);
       }
@@ -16,6 +14,9 @@ function convertBigIntsToStrings(data) {
 
   return convert(data);
 }
+
+import { NextResponse } from 'next/server';
+import prisma from '../../../../lib/prisma';
 
 export async function GET(request, { params }) {
   const id = params.id;
@@ -47,7 +48,9 @@ export async function PUT(request, { params }) {
     },
   });
 
-  const { title, desc, color, link, img } = await request.json();
+  const { title, desc, img, color, link } = await request.json();
+
+  // Convert BigInt values to strings before updating
   const updatedPost = await prisma.portfolio.update({
     where: {
       id: parseInt(id),
@@ -55,9 +58,9 @@ export async function PUT(request, { params }) {
     data: {
       title,
       desc,
+      img,
       color,
       link,
-      img,
     },
   });
 
