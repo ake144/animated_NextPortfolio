@@ -1,3 +1,6 @@
+import { NextResponse } from 'next/server';
+import prisma from '../../../../lib/prisma';
+
 
 function convertBigIntsToStrings(data) {
   // Recursively convert BigInt values to strings
@@ -15,8 +18,7 @@ function convertBigIntsToStrings(data) {
   return convert(data);
 }
 
-import { NextResponse } from 'next/server';
-import prisma from '../../../../lib/prisma';
+
 
 export async function GET(request, { params }) {
   const id = params.id;
