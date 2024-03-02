@@ -5,13 +5,14 @@ import Link from "next/link";
 import { useState } from "react";
 import NavLink from "./navLink";
 import { motion } from "framer-motion";
+import ThemeSwitch from "./Theme";
 
 const links = [
   { url: "/", title: "Home" },
   { url: "/about", title: "About" },
   { url: "/portfolio", title: "Works" },
   { url: "/contact", title: "Contact" },
-  {url:"/blog",title:"Blog"},
+  {url:"/post",title:"Blog"},
 ];
 
 const Navbar = () => {
@@ -110,6 +111,7 @@ const Navbar = () => {
           <Image src="/linkedin.png" alt="" width={24} height={24} />
         </Link>
       </div>
+      <div className="hidden md:flex"><ThemeSwitch /></div>
       {/* RESPONSIVE MENU */}
       <div className="md:hidden">
         {/* MENU BUTTON */}
@@ -150,8 +152,11 @@ const Navbar = () => {
                 <Link href={link.url}>{link.title}</Link>
               </motion.div>
             ))}
+                 <div className=""><ThemeSwitch /></div>
           </motion.div>
         )}
+
+   
       </div>
     </div>
   );
