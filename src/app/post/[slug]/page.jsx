@@ -34,13 +34,14 @@ function getPost({slug}){
 export default function Page({ params }){
     const props = getPost( params);
     return (
+ 
       <div className='min-h-screen'>
         <article className='prose min-h-full prose-sm md:prose-base lg:prose-lg prose-slate !prose-invert mx-auto'>
             <h1 className='text-black'>{props.fontMatter.title}</h1>
             <h2 className='text-black'> {props.fontMatter.description}</h2>
-                   <p className='justify-left '>{props.fontMatter.date}</p>
+            <p className='justify-left '>{props.fontMatter.date}</p>
 
-            <MDXRemote source={props.content} ></MDXRemote>
+            <MDXRemote className='min-h-full' source={props.content} ></MDXRemote>
         </article>
         </div>
     )

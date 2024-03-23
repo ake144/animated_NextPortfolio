@@ -86,7 +86,7 @@ const PortfolioPage = () => {
           </motion.div>
         </div>
       </div>
-      <div className="w-screen h-screen flex flex-col gap-16 bg-white   justify-center text-center ">
+      <div className="w-full h-auto flex flex-col gap-16 bg-white   justify-center text-center ">
         <h1 className="text-6xl  text-whu ">Do you have a project?</h1>
         <div className="relative">
           <motion.svg
