@@ -38,7 +38,7 @@ const Homepage = () => {
             </button>
             </Link>
             <Link href="/contact">
-            <button className="p-4 rounded-lg ring-1 bg-black ring-black ">
+            <button className="p-4 rounded-lg ring-1 bg-black text-white ring-black ">
               Contact Me
             </button>
             </Link>

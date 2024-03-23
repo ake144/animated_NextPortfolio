@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Akeja Portfolio App",
-  description: "The best animated portfolio ",
+  description: "My portfolio Project ",
 };
 
 export default function RootLayout({ children }) {
