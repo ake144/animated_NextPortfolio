@@ -1,0 +1,9 @@
+import { Howl } from 'howler';
+
+// Initialize Howl with correct path
+const sound = new Howl({
+  src: ['/sounds/on.wav'] // Adjust the path as per your directory structure
+});
+
+// To play the sound
+sound.play();

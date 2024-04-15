@@ -3,10 +3,23 @@ import matter from "gray-matter";
 import path from "path";
 import Link from "next/link";
 
+
+export async function Metadata() {
+
+  const title = 'personal Blog  articles  ';
+  const ogImageUrl = '/blog.jpg'; // Corrected image path
+  const description ="this is my personal blog site, anything updates are released here";
+  return {
+    title,
+    description,
+    ogImageUrl
+  };
+}
+
+
 const post = () => {
   const blogDir = "./src/app/content";
   const posts = fs.readdirSync(blogDir);
-
   const allPostsData = posts.map((postName) => {
     const postPath = path.join(blogDir, postName);
     const fileContents = fs.readFileSync(postPath, "utf8");
@@ -21,6 +34,8 @@ const post = () => {
     'blog.jpg',
      'blog.jpg'
   ]
+
+
 
   return (
     <section className="pt-20 lg:pt-[120px] pb-10 lg:pb-20">
